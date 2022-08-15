@@ -694,11 +694,11 @@ unsafe fn choose_arb_pixel_format(
                 None
             }
         },
-        srgb: if extensions.split(' ').any(|i| i == "WGL_ARB_framebuffer_sRGB"){
+        srgb: if extensions.split(' ').any(|i| i == "WGL_ARB_framebuffer_sRGB") {
             get_info(gl::wgl_extra::FRAMEBUFFER_SRGB_CAPABLE_ARB) != 0
         } else if extensions.split(' ').any(|i| i == "WGL_EXT_framebuffer_sRGB") {
             get_info(gl::wgl_extra::FRAMEBUFFER_SRGB_CAPABLE_EXT) != 0
-        } else if extensions.split(' ').any(|i| i == "WGL_EXT_colorspace"){
+        } else if extensions.split(' ').any(|i| i == "WGL_EXT_colorspace") {
             get_info(gl::wgl_extra::FRAMEBUFFER_SRGB_CAPABLE_EXT) != 0
         } else {
             false
