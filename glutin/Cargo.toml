@@ -23,10 +23,8 @@ default = ["x11", "wayland"]
 lazy_static = "1.3"
 
 [dependencies.winit]
-version = "0.25"
 default-features = false
-git = "https://github.com/iced-rs/winit"
-rev = "1e6623c4d06d110e5408dcbdf1edebd07e6a200e"
+git = "https://github.com/wyatt-herkamp/winit.git"
 
 [target.'cfg(target_os = "android")'.dependencies]
 android_glue = "0.2"
