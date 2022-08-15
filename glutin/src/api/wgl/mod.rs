@@ -602,7 +602,7 @@ unsafe fn choose_arb_pixel_format_id(
 
         // WGL_*_FRAMEBUFFER_SRGB might be assumed to be true if not listed;
         // so it's best to list it out and set its value as necessary.
-        if extensions.split(' ').any(|&i| i == "WGL_EXT_colorspace").is_some() {
+        if extensions.split(' ').any(|i| i == "WGL_EXT_colorspace") {
             out.push(gl::wgl_extra::COLORSPACE_EXT as raw::c_int);
             if pf_reqs.srgb {
                 out.push(gl::wgl_extra::COLORSPACE_SRGB_EXT as raw::c_int);
@@ -694,11 +694,11 @@ unsafe fn choose_arb_pixel_format(
                 None
             }
         },
-        srgb: if extensions.split(' ').any(|i| i == "WGL_ARB_framebuffer_sRGB").is_some() {
+        srgb: if extensions.split(' ').any(|i| i == "WGL_ARB_framebuffer_sRGB"){
             get_info(gl::wgl_extra::FRAMEBUFFER_SRGB_CAPABLE_ARB) != 0
-        } else if extensions.split(' ').any(|i| i == "WGL_EXT_framebuffer_sRGB").is_some() {
+        } else if extensions.split(' ').any(|i| i == "WGL_EXT_framebuffer_sRGB") {
             get_info(gl::wgl_extra::FRAMEBUFFER_SRGB_CAPABLE_EXT) != 0
-        } else if extensions.split(' ').any(|i| i == "WGL_EXT_colorspace").is_some() {
+        } else if extensions.split(' ').any(|i| i == "WGL_EXT_colorspace"){
             get_info(gl::wgl_extra::FRAMEBUFFER_SRGB_CAPABLE_EXT) != 0
         } else {
             false
