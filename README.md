@@ -1,12 +1,12 @@
 # glutin -  OpenGL, UTilities and INput
 A low-level library for OpenGL context creation, written in pure Rust.
 
-[![](https://meritbadge.herokuapp.com/glutin)](https://crates.io/crates/glutin)
+[![](https://img.shields.io/crates/v/glutin.svg)](https://crates.io/crates/glutin)
 [![Docs.rs](https://docs.rs/glutin/badge.svg)](https://docs.rs/glutin)
 
 ```toml
 [dependencies]
-glutin = "0.27.0"
+glutin = "0.29.1"
 ```
 
 ## [Documentation](https://docs.rs/glutin)
@@ -15,13 +15,15 @@ glutin = "0.27.0"
 
 Join us in any of these:
 
-[![Freenode](https://img.shields.io/badge/freenode.net-%23glutin-red.svg)](http://webchat.freenode.net?channels=%23glutin&uio=MTY9dHJ1ZSYyPXRydWUmND10cnVlJjExPTE4NSYxMj10cnVlJjE1PXRydWU7a)
-[![Matrix](https://img.shields.io/badge/Matrix-%23Glutin%3Amatrix.org-blueviolet.svg)](https://matrix.to/#/#Glutin:matrix.org)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tomaka/glutin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Matrix](https://img.shields.io/badge/Matrix-%23rust--windowing%3Amatrix.org-blueviolet.svg)](https://matrix.to/#/#rust-windowing:matrix.org)
+[![Libera.Chat](https://img.shields.io/badge/libera.chat-%23winit-red.svg)](https://web.libera.chat/#winit)
 
 ## Usage Examples
 
-Warning: these are examples for master. For the latest released version, 0.23, view [here.](https://github.com/rust-windowing/glutin/tree/f071c722f725143d80638f1c5c12a76d9d8e1be8)
+Warning: these are examples for master. For the latest released version you can
+find them [here](https://github.com/rust-windowing/glutin/releases/tag/v0.29.1).
+
+The examples use [gl_generator](https://crates.io/crates/gl_generator) to generate OpenGL bindings.
 
 ### Try it!
 
@@ -51,11 +53,7 @@ Glutin is only officially supported on the latest stable version of the Rust com
 
 To compile the examples for android, you have to use the `cargo apk` utility.
 
-See [the `android-rs-glue` repository](https://github.com/rust-windowing/android-rs-glue) for instructions.
-
-### Emscripten with asmjs
-
-Emscripten support has been deprecated in favor of platforms like stdweb. To get an OpenGL context on these platforms, please use crates like [glow](https://crates.io/crates/glow) instead.
+See [`cargo-apk` in the `android-ndk-rs` repository](https://github.com/rust-windowing/android-ndk-rs/tree/master/cargo-apk) for instructions.
 
 ### X11
 

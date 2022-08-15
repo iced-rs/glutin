@@ -9,7 +9,7 @@ fn main() {
     let el = EventLoop::new();
     let wb = WindowBuilder::new().with_title("A fantastic window!");
 
-    let windowed_context = ContextBuilder::new().build_windowed(wb, &el).unwrap();
+    let windowed_context = ContextBuilder::new().with_vsync(true).build_windowed(wb, &el).unwrap();
 
     let windowed_context = unsafe { windowed_context.make_current().unwrap() };
 
@@ -30,7 +30,9 @@ fn main() {
             },
             Event::RedrawRequested(_) => {
                 gl.draw_frame([1.0, 0.5, 0.7, 1.0]);
+                println!("Buffer age: {}", windowed_context.buffer_age());
                 windowed_context.swap_buffers().unwrap();
+                windowed_context.window().request_redraw();
             }
             _ => (),
         }
